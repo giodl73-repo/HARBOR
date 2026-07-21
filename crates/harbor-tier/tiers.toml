@@ -1,0 +1,31 @@
+version = "v0"
+rationale = "Provisional maritime tier-SLA record pending calibrated operational evidence."
+evidence_label = "planned"
+
+[tiers.T1]
+name = "International Gateway Port"
+throughput = "massive peak-season TEU capacity"
+dwell = "managed dwell under surge"
+connectivity = "broad international lane and hinterland reach"
+access = "deep all-tide gateway access"
+
+[tiers.T2]
+name = "National Port"
+throughput = "high national TEU capacity"
+dwell = "bounded dwell under peak-season demand"
+connectivity = "strong hinterland and coastal connectivity"
+access = "channel adequacy for national load-center service"
+
+[tiers.T3]
+name = "Regional / Inland Port"
+throughput = "adequate regional throughput"
+dwell = "reliable turn time for feeder demand"
+connectivity = "maintained gateway or inland corridor feed"
+access = "regional channel or intermodal access maintained"
+
+[tiers.T4]
+name = "Local Terminal / Berth"
+throughput = "basic local terminal capacity"
+dwell = "basic reliability and turn time"
+connectivity = "lifeline or local lane connectivity"
+access = "maintained berth or short-sea access"

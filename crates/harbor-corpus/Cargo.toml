@@ -1,0 +1,10 @@
+[package]
+name = "harbor-corpus"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+harbor-network = { path = "../harbor-network" }
+serde = { version = "1", features = ["derive"] }
+thiserror = "1"

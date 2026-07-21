@@ -1,0 +1,12 @@
+[package]
+name = "harbor-gap"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+harbor-corpus = { path = "../harbor-corpus" }
+harbor-score = { path = "../harbor-score" }
+harbor-tier = { path = "../harbor-tier" }
+serde = { version = "1", features = ["derive"] }
+thiserror = "1"

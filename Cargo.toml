@@ -1,0 +1,8 @@
+[workspace]
+members = ["crates/harbor-network", "crates/harbor-corpus", "crates/harbor-score", "crates/harbor-tier", "crates/harbor-gap", "crates/harbor-cli"]
+resolver = "3"
+
+[workspace.package]
+edition = "2021"
+license = "MIT"
+version = "0.1.0"
