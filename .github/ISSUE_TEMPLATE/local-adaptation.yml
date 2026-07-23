@@ -1,0 +1,37 @@
+name: Local adaptation proposal
+description: Propose using HARBOR for a bounded gateway, terminal, channel, hinterland, or intermodal question.
+title: "Local adaptation: "
+labels: ["adoption", "evidence-needed"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this for a bounded HARBOR adaptation. Public reuse does not create an engineering, dredging, environmental, lease, advocacy, endorsement, funding, or validation claim.
+  - type: input
+    id: scope
+    attributes:
+      label: Bounded scope
+      placeholder: "Example: Savannah channel access and hinterland connection review"
+    validations:
+      required: true
+  - type: textarea
+    id: service-question
+    attributes:
+      label: Service question
+      description: What gateway service-chain promise is being tested?
+    validations:
+      required: true
+  - type: textarea
+    id: source-surfaces
+    attributes:
+      label: Existing source surfaces
+      description: List channel, terminal, gate, rail, truck, vessel-call, dwell, resilience, or plan sources.
+    validations:
+      required: true
+  - type: textarea
+    id: held-claims
+    attributes:
+      label: Claims that must stay held
+      description: Name engineering, dredging, environmental, lease, endorsement, funding, procurement, compliance, or validation claims that should not be made.
+    validations:
+      required: true

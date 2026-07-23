@@ -15,6 +15,17 @@ on the waterfront.
 > study, dredging design, environmental review, terminal lease, or advocacy
 > brief, and it claims no MARAD, port-authority, carrier, or IMO endorsement.
 
+## Use HARBOR
+
+HARBOR is public and open to use as a reference model, cited port-service
+finding, diagnostic pattern, review discipline, or local adaptation starting
+point.
+
+If you want to apply it to a gateway, port, terminal district, channel-access
+problem, hinterland connection, or maritime service question, start with
+[`docs/adoption/README.md`](docs/adoption/README.md). It lays out safe reuse,
+first adaptation steps, contribution targets, and claim boundaries.
+
 ## Why this matters
 
 Deep water without rail capacity, terminal throughput without gate flow, and
@@ -64,6 +75,7 @@ their evidence and demand basis.
 ## Documentation
 
 - [`PRODUCT_PLAN.md`](PRODUCT_PLAN.md) — scope, product shape, and next work.
+- [`docs/adoption/`](docs/adoption) — open reuse, local adaptation, and review path.
 - [`docs/vtrace/`](docs/vtrace) — VTRACE requirements, architecture, trace, and verification.
 - [`context/waves/`](context/waves) — repo-local execution history.
 - [`.roles/ROLE.md`](.roles/ROLE.md) — adversarial review panel.
