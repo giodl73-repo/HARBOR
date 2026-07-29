@@ -11,6 +11,16 @@ on the waterfront.
 
 **Series:** [Applied Systems](https://github.com/giodl73-repo/giodl73-repo/blob/main/series/applied-systems.md)
 
+## Show someone (start here)
+
+| Audience | Path | Time |
+|---|---|---|
+| **Planner / researcher** | [SHOWCASE.md](SHOWCASE.md) → [deep-draft channel finding](docs/findings/2026-06-deep-draft-channel-tail.md) | 15–25 min |
+| **CLI implementer** | [SHOWCASE.md](SHOWCASE.md) → `cargo run -p harbor-cli -- gap --input corpus --scale national` | 10–20 min |
+
+Research lab only — not dredging design, NEPA, terminal lease advice, or agency
+endorsement. Optimize the service chain, not the most visible asset.
+
 ## Infrastructure 2.0 family
 
 HARBOR is one domain implementation of a shared evidence-first method:
