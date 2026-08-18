@@ -53,6 +53,19 @@ HARBOR is public and open to use as a reference model, cited port-service
 finding, diagnostic pattern, review discipline, or local adaptation starting
 point.
 
+### Reuse boundary
+
+HARBOR is currently a specialist maritime-gateway analysis product, not a
+supported cross-repository library. Its network model, evidence taxonomy,
+DIM-01..13 scoring, service tiers, gap policy, and CLI remain product-local; no
+portfolio repository pins a `harbor-*` crate or owns compatibility proof.
+
+Infrastructure 2.0 siblings share and adapt an evidence-first method, not a
+versioned HARBOR dependency. Family source similarities, findings, worksheets,
+and local adaptations are not stable provider contracts. Direct reuse requires
+a named downstream consumer, a bounded versioned surface, and consumer-owned
+compatibility tests.
+
 If you want to apply it to a gateway, port, terminal district, channel-access
 problem, hinterland connection, or maritime service question, start with
 [`docs/adoption/README.md`](docs/adoption/README.md). It lays out safe reuse,
