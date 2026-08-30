@@ -4,21 +4,20 @@
 
 Repo: HARBOR
 
-Interface type: target (greenfield). Controls HARBOR's external and cross-layer boundaries so
-future work packages cannot change them silently. IF-001..004 restate the
-`SPECIFICATION_BASELINE.md` public contracts; IF-005..006 add the crate API and CLI introduced in
-`ARCHITECTURE.md`. None are implemented yet.
+Interface type: implemented target. Controls HARBOR's external and cross-layer boundaries so future
+changes cannot alter them silently. IF-001..004 restate the `SPECIFICATION_BASELINE.md` public
+contracts; IF-005..006 add the crate API and CLI introduced in `ARCHITECTURE.md`.
 
 ## Interface Inventory
 
 | ID | Interface | Type | Owner | Consumers | Compatibility Rule | Verification |
 |---|---|---|---|---|---|---|
-| IF-001 | Corpus entry file (incl. scale/market) | file (markdown + frontmatter) | PKG-002 | analysts, PKG-003/004/005, reviewers | Frontmatter keys additive; `id` immutable; `scale` from a fixed enum | future VER-004/016 / schema check |
-| IF-002 | `data/sources.md` registry | file (registry) | PKG-002 / data steward | citation audit, all scored quantities | Source entries append/annotate; ids stable | future VER-003 / citation audit |
-| IF-003 | Rubric version record | file | PKG-003 | scoring, calibration | Dimension set + weights versioned | future VER-006 / calibration record |
-| IF-004 | Tier/SLA record | file | PKG-004 | tier classification, gap analysis | Tier set + SLA terms versioned; reassignment recorded | future VER-014 / schema check |
-| IF-005 | `harbor-network` library API | API (Rust crate) | PKG-001 | PKG-002..006 | Public types/functions semver; breaking change is change-control | future VER-007 / cargo test |
-| IF-006 | `harbor` CLI | CLI | PKG-006 | maintainers, agents, analysts | Subcommands/flags additive (incl. `--scale`); output schemas versioned | future VER-001 / command review |
+| IF-001 | Corpus entry file (incl. scale/market) | file (markdown + frontmatter) | PKG-002 | analysts, PKG-003/004/005, reviewers | Frontmatter keys additive; `id` immutable; `scale` from a fixed enum | VER-004/016 / schema check |
+| IF-002 | `data/sources.md` registry | file (registry) | PKG-002 / data steward | citation audit, all scored quantities | Source entries append/annotate; ids stable | VER-003 / citation audit |
+| IF-003 | Rubric version record | file | PKG-003 | scoring, calibration | Dimension set + weights versioned | VER-006 / calibration record |
+| IF-004 | Tier/SLA record | file | PKG-004 | tier classification, gap analysis | Tier set + SLA terms versioned; reassignment recorded | VER-014 / schema check |
+| IF-005 | `harbor-network` library API | API (Rust crate) | PKG-001 | PKG-002..006 | Public types/functions semver; breaking change is change-control | VER-007 / cargo test |
+| IF-006 | `harbor` CLI | CLI | PKG-006 | maintainers, agents, analysts | Subcommands/flags additive (incl. `--scale`); output schemas versioned | VER-001 / command review |
 
 ## Interface Details
 
@@ -36,7 +35,7 @@ Errors: missing `id`, uncited quantity, or missing `scale` → held (REQ-005); t
 drift → Scope Keeper finding.
 
 Versioning: frontmatter keys additive; `id` semantics immutable; `scale` from a fixed enum
-(international/national/regional/local); schema in `corpus/SCHEMA.md` (deferred).
+(international/national/regional/local); schema lives in `corpus/SCHEMA.md`.
 
 Evidence: future VER-004/016; `proof check .` for doc integrity.
 
@@ -88,8 +87,8 @@ Versioning: subcommands/flags additive; output schemas versioned. Evidence: futu
 
 | ID | Question | Disposition |
 |---|---|---|
-| IFQ-001 | Exact corpus frontmatter schema and `corpus/SCHEMA.md` (incl. scale enum). | Defer to first corpus wave. |
-| IFQ-002 | CLI output formats (JSON/CSV/markdown) per subcommand. | Defer to IMPLEMENTATION_PLAN. |
+| IFQ-001 | Exact corpus frontmatter schema and `corpus/SCHEMA.md` (incl. scale enum). | Closed by `corpus/SCHEMA.md`. |
+| IFQ-002 | CLI output formats (JSON/CSV/markdown) per subcommand. | Closed by CLI artifact output. |
 | IFQ-003 | Whether FLETCH owns acquisition behind IF-006 or a separate adapter. | Defer to intake. |
 | IFQ-004 | Whether `--scale` accepts a nested path (international/national/regional/local). | Defer to DEF-005. |
 

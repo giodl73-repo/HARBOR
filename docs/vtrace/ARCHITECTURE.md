@@ -4,10 +4,9 @@
 
 Repo: HARBOR
 
-Architecture type: target (greenfield). Describes the intended system shape that satisfies
-`REQUIREMENTS.md` and `SPECIFICATION_BASELINE.md`, including the multi-scale model. No components
-are built yet; boundaries and dependency direction are decided here so work packages can be
-allocated cleanly.
+Architecture type: implemented target. This document began as the intended system shape that
+satisfies `REQUIREMENTS.md` and `SPECIFICATION_BASELINE.md`; WP-001..006 have since built the
+planned six-crate workspace. Boundaries and dependency direction remain the controlling architecture.
 
 ## Architecture Summary
 
@@ -22,12 +21,12 @@ layer depends on, mirroring the portfolio. Layers depend strictly downward — n
 
 | Component | Boundary ID | Responsibility | Requirement IDs | Interfaces | Evidence |
 |---|---|---|---|---|---|
-| `harbor-network` (port/freight kernel) | PKG-001 | Typed graph (Port/Lane), stable identity, connectivity/centrality (DIM-04), throughput/dwell helpers with typed demand basis. | REQ-004, REQ-005, REQ-007 | IF-005 (lib API) | future VER-004/005/007 |
-| `harbor-corpus` (corpus + data) | PKG-002 | Corpus file IO + schema incl. `scale`/`market` tags, `data/sources.md` registry, evidence labels. | REQ-001, REQ-002, REQ-003, REQ-016 | IF-001, IF-002 | future VER-001/002/003/016 |
-| `harbor-score` (scoring) | PKG-003 | Dimension pool DIM-01..13, 0–10 scoring, rubric calibration + versioning. | REQ-006 | IF-003 | future VER-006 |
-| `harbor-tier` (tier/SLA) | PKG-004 | Tier classification T1–T4, SLA terms, DIM-13 conformance, tier-SLA gaps. | REQ-014, REQ-015 | IF-004 | future VER-014/015 |
-| `harbor-gap` (gap analysis) | PKG-005 | Plot dimension space, find under-served regions, scale-filtered runs, null results. | REQ-008, REQ-016 | (internal) | future VER-008/016 |
-| `harbor-cli` (orchestration) | PKG-006 | Commands that drive the pipeline (incl. `--scale`) and emit artifacts. | REQ-001 (regen path) | IF-006 (CLI) | future VER-001 |
+| `harbor-network` (port/freight kernel) | PKG-001 | Typed graph (Port/Lane), stable identity, connectivity/centrality (DIM-04), throughput/dwell helpers with typed demand basis. | REQ-004, REQ-005, REQ-007 | IF-005 (lib API) | VER-004/005/007 |
+| `harbor-corpus` (corpus + data) | PKG-002 | Corpus file IO + schema incl. `scale`/`market` tags, `data/sources.md` registry, evidence labels. | REQ-001, REQ-002, REQ-003, REQ-016 | IF-001, IF-002 | VER-001/002/003/016 |
+| `harbor-score` (scoring) | PKG-003 | Dimension pool DIM-01..13, 0–10 scoring, rubric calibration + versioning. | REQ-006 | IF-003 | VER-006 |
+| `harbor-tier` (tier/SLA) | PKG-004 | Tier classification T1–T4, SLA terms, DIM-13 conformance, tier-SLA gaps. | REQ-014, REQ-015 | IF-004 | VER-014/015 |
+| `harbor-gap` (gap analysis) | PKG-005 | Plot dimension space, find under-served regions, scale-filtered runs, null results. | REQ-008, REQ-016 | (internal) | VER-008/016 |
+| `harbor-cli` (orchestration) | PKG-006 | Commands that drive the pipeline (incl. `--scale`) and emit artifacts. | REQ-001 (regen path) | IF-006 (CLI) | VER-001 |
 | review layer (`.roles/`) | — (docs, not a crate) | Parliament + editorial gate, scope boundary. | REQ-009, REQ-010, REQ-011 | review records | EVID-009/010/011 |
 
 ## Package / Language Boundaries
@@ -66,8 +65,8 @@ public sources (BTS Port Performance / USACE Waterborne Commerce / UNCTAD / AIS 
 | Dependency | Purpose | Boundary / Risk | Verification |
 |---|---|---|---|
 | `petgraph` | Graph data structure + algorithms in PKG-001. | Well-scoped; low risk. | future cargo test |
-| `serde` / `csv` | Corpus + data IO in PKG-002. | Low risk. | future cargo test |
-| `clap` | CLI in PKG-006. | Low risk. | future cargo test |
+| `serde` / `csv` | Corpus + data IO in PKG-002. | Low risk. | cargo test |
+| `clap` | CLI in PKG-006. | Low risk. | cargo test |
 | FLETCH (portfolio) | Source-byte/paged data acquisition + cache manifests. | Planned; not yet wired. Avoid TRACKER-relative paths (CON). | intake + future gate |
 | PROOF (portfolio) | Markdown QA for docs/artifacts. | Tool/CLI relationship, not runtime. | `proof check .` (active) |
 | METIS-CORE / RLINE (portfolio) | Optional graph partitioning / shared kernels for gap analysis. | Deferred until gap wave. | deferred |
@@ -86,7 +85,7 @@ public sources (BTS Port Performance / USACE Waterborne Commerce / UNCTAD / AIS 
 
 - Cross-scale data openness and AIS/nominal proxy ambiguity (SPEC-UNK-001/002) may force
   proxy-heavy early corpus.
-- FLETCH integration is planned, not proven; until then acquisition is manual.
+- FLETCH integration is planned, not proven; current acquisition is manual/source-registry based.
 - Scale nesting representation (DEF-005) is unresolved; may affect the corpus schema.
 
 ## Role Review Notes

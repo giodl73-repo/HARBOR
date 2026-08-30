@@ -13,9 +13,11 @@ Date: 2026-06-26
 Reviewer / lenses: HARBOR `.roles` parliament + editorial panel (simulated against committed role
 files), requirements-traceability and V&V lenses.
 
-This gate decides whether HARBOR's **planning baseline** is coherent enough to proceed to
-implementation planning. It does **not** claim any implementation, scored corpus, or validated
-result.
+This gate originally decided whether HARBOR's **planning baseline** was coherent enough to proceed
+to implementation planning. The implementation wave has since closed; the current review posture is
+that the code path validates, the first DIM-01 national finding is reproducible, and promotion still
+requires scope discipline because the result is not port-design, permitting, lease, funding, or
+agency authority.
 
 ## Role Review Matrix
 
@@ -24,8 +26,8 @@ result.
 | Systems engineering | yes | Port-System Planner + Scope Keeper | pass | MISSION→CONOPS→REQUIREMENTS→SPEC→TRACE form a coherent chain; tier + scale models integrated. |
 | Requirements traceability | yes | Traceability lens | pass | `TRACE.md` maps NEED-001..008 / OPS-001..007 → REQ-001..016 → SPEC-001..013; gaps labelled. |
 | V&V | yes | V&V lens | pass_with_risk | `VERIFICATION.md` methods credible; most results `pending` (greenfield). |
-| Software assurance | no | — | not_required | No code yet; revisit at implementation planning. |
-| Security/privacy | no | — | not_required | No data ingestion/code yet; revisit when sources/CLI exist. |
+| Software assurance | yes | Software-assurance lens | pass | Rust workspace passed fmt, clippy, locked tests, CLI help, and national gap replay. |
+| Security/privacy | yes | Security/privacy lens | pass | No secrets or personal data path; corpus uses public source registry and labelled evidence. |
 | Safety/mission impact | yes | Operations Officer + Port-Authority/Alliance Realist | pass | Demand basis (SPEC-DB-01) and tier-SLA gating (REQ-015) control overclaim of throughput; terminal/alliance/labor assumptions must be explicit. |
 | Source custody | yes | Citation Auditor + data steward | pass_with_risk | Citation + scale discipline specified (SPEC-009/013); AIS/nominal proxy flagged (SPEC-UNK-002); no corpus sources ingested yet. |
 | Configuration/change control | yes | Scope Keeper | pass | Public contracts IF-001..004 have change-control triggers; VTRACE one-at-a-time enforced. |
@@ -62,15 +64,19 @@ No open critical or major findings.
 
 ## Required Follow-Up
 
-- Add ARCHITECTURE and INTERFACES before non-trivial implementation (DEF-004).
-- Author IMPLEMENTATION_PLAN + WORK_PACKAGES before writing code.
-- Build `data/sources.md` and the corpus SCHEMA (incl. scale enum) before the first corpus entry.
-- Resolve scale nesting (DEF-005) and observed-vs-AIS dwell (DEF-002) at the corpus wave.
+- Keep the first DIM-01 finding labelled as a narrow research result.
+- Expand dimensions only when source registry and evidence labels are ready.
+- Resolve scale nesting (DEF-005) and observed-vs-AIS dwell (DEF-002) before cross-scale or
+  dwell-based public claims.
 
 ## Validation Commands
 
 ```powershell
-proof check .
+cargo fmt --all -- --check
+cargo clippy --workspace --all-targets -- -D warnings
+cargo test --workspace --locked
+cargo run -p harbor-cli -- --help
+cargo run -p harbor-cli -- gap --input corpus --scale national
 git diff --check
 ```
 
@@ -79,10 +85,9 @@ git diff --check
 The HARBOR planning baseline (minimum VTRACE slice: MISSION, CONOPS, REQUIREMENTS,
 SPECIFICATION_BASELINE, TRACE, VERIFICATION, REVIEW) is internally coherent, fully traced, and
 reviewed against the real `.roles` panel — and it carries the multi-scale model as a first-class,
-traced concern. Three minor findings were closed during earlier stages; remaining risk is the
-expected greenfield risk (provisional values, pending implementation evidence, AIS/nominal proxy
-ambiguity), all explicitly accepted or deferred.
+traced concern. Three minor findings were closed during earlier stages. The current residual risk is
+not missing implementation; it is bounded evidence coverage and public overinterpretation of the
+first finding.
 
-**Decision: pass_with_risk.** HARBOR may proceed to implementation planning (ARCHITECTURE →
-INTERFACES → IMPLEMENTATION_PLAN → WORK_PACKAGES). No public result, scored corpus, or
-construction claim is authorized by this gate.
+**Decision: pass_with_risk.** HARBOR may publish the narrow research finding with boundary
+language. No construction, lease, permitting, funding, or agency claim is authorized by this gate.

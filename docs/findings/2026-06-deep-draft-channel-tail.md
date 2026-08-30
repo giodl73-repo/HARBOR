@@ -5,7 +5,7 @@ Scale: national
 Rubric: HARBOR v0 (`UNDER_SERVED_THRESHOLD = 7.0`)
 Corpus: `corpus/us-*.md` (8 US container gateways)
 Dimension assessed: DIM-01 deep-draft channel adequacy (only)
-Reproduce: `cargo run -p harbor-cli -- --scale national gap --input corpus`
+Reproduce: `cargo run -p harbor-cli -- gap --input corpus --scale national`
 
 ## Question
 

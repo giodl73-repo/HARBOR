@@ -6,9 +6,10 @@ Repo: HARBOR
 
 VTRACE adoption scope: connect HARBOR's accepted requirements to mission needs, CONOPS scenarios,
 controlled specification items, future design surfaces, work packages, verification, validation,
-and evidence. HARBOR is greenfield: design elements, work packages, and evidence are
-**planned/deferred**, and this matrix exposes those gaps honestly rather than implying built
-surfaces exist.
+and evidence. The initial matrix was authored while HARBOR was greenfield; the implementation wave
+has since built the planned six-crate workspace. This trace now treats `WP-*` and `EVID-*` as
+implemented where command evidence exists, while keeping calibration, coverage, and public-claim
+limits explicit.
 
 ## Requirement Trace
 
@@ -39,8 +40,8 @@ surfaces exist.
 | Mission constraints | CON-001..007 | REQ-001..016 | covered | Constraints attached where they affect evidence, identity, scope, repo ops, or scale. |
 | CONOPS scenarios | OPS-001..007 | REQ-001..016 | covered | Every scenario drives at least one accepted requirement. |
 | Requirements | REQ-001..016 | SPEC-001..013 / SPEC-NF-001..003 / IF-001..004 | covered | Specification coverage accepted in `SPECIFICATION_BASELINE.md`. |
-| Specifications | SPEC-001..013 | `VER-*` / `EVID-*` | planned | Verification IDs defined in `VERIFICATION.md`; evidence is greenfield-pending. |
-| Requirements / specs | REQ-* / SPEC-* | `WP-*` | deferred | No work packages yet; implementation planning follows the minimum slice. |
+| Specifications | SPEC-001..013 | `VER-*` / `EVID-*` | covered_with_risk | Verification IDs defined in `VERIFICATION.md`; command evidence exists for the implemented workspace, with narrow-corpus limits. |
+| Requirements / specs | REQ-* / SPEC-* | `WP-*` | covered | WP-001..006 are done in `context/waves/2026-06-26-harbor-implementation/WAVE.md`. |
 
 ## Unknowns And Deferrals Trace
 
@@ -59,13 +60,12 @@ surfaces exist.
 
 ## Honest Gaps (no faked evidence)
 
-- No `VER-*` evidence exists yet; verification methods are named but unrun. The next stage
-  (`VERIFICATION.md`) defines `VER-*`; actual `EVID-*` accrue only once implementation work
-  packages run.
-- No `WP-*`, `ARCHITECTURE`, `INTERFACES`, or `CODE_RIGOR` artifacts exist yet; the trace marks
-  these `deferred`, not satisfied.
-- Dimension weights, SLA thresholds, and scale nesting are provisional; the trace does not claim
+- The current corpus is a first slice: eight national-scale US gateway entries and DIM-01 channel
+  depth evidence. Other dimensions are emitted as explicit `EmptyRegion` gaps.
+- Dimension weights, SLA thresholds, and scale nesting remain provisional; the trace does not claim
   calibrated values.
+- The first public finding is a research result. It is not dredging design, terminal-lease advice,
+  NEPA/permitting evidence, funding direction, or agency endorsement.
 
 ## Role Review Notes
 
