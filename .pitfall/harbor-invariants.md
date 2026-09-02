@@ -73,7 +73,7 @@ first finding explicitly limits itself to DIM-01.
 
 ## HARBOR-I-05: Public Reuse Requires Boundary Review
 
-**Status:** PARTIAL
+**Status:** MITIGATED
 
 **Claim:** Public or downstream reuse requires scope boundary language and role
 review before HARBOR output is treated as a decision artifact.
@@ -82,7 +82,12 @@ review before HARBOR output is treated as a decision artifact.
 lease, permitting, funding, or agency authority.
 
 **Enforcement:** README/product boundaries, VTRACE review, role panel, and
-PITFALL tracking keep public reuse bounded.
+PITFALL tracking keep public reuse bounded. The retained PITFALL policy check
+requires the finding to keep DIM-01-only scope, declared scale, unassessed
+dimensions, no authority language, and explicit role-review prerequisites
+visible.
 
 **Evidence:** `README.md`, `PRODUCT_PLAN.md`, `.roles/ROLE.md`,
-`docs/vtrace/REVIEW.md`, and `.pitfall/harbor-pitfalls.md`.
+`docs/findings/2026-06-deep-draft-channel-tail.md`,
+`docs/vtrace/REVIEW.md`, `docs/pitfall-boundaries.v1.json`,
+`tests/check-pitfall-policy.ps1`, and `.pitfall/harbor-pitfalls.md`.

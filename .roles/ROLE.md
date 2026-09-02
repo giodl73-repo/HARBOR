@@ -70,3 +70,9 @@ recorded in:
 
 A stage reaches its **fixed point** when no unresolved critical or major actionable finding
 remains and every deferred item names a later stage or work package.
+
+## PITFALL Gates
+
+| Gate | Required roles | Blocks |
+|---|---|---|
+| First public port finding | Port-System Planner, Maritime / Civil Engineer, Operations & Logistics Officer, Maritime Economist, Environmental & Port-Community Advocate, Port-Authority & Alliance Realist, Citation Auditor, Scope Keeper, Numeracy Checker | Treating the cited DIM-01 deep-draft channel finding, gap CLI output, or portfolio summary as dredging design, terminal lease advice, NEPA or permitting evidence, funding direction, port-authority position, agency endorsement, carrier endorsement, or IMO endorsement before a named release artifact, visible unassessed dimensions, cited corpus/source basis, declared scale, reproducible run, and full role review exist. |

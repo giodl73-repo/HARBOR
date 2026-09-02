@@ -1,0 +1,33 @@
+{
+  "schema": "pitfall-boundaries.v1",
+  "repo": "HARBOR",
+  "updated": "2026-09-02",
+  "boundaries": [
+    {
+      "id": "HARBOR-PB-01",
+      "pitfalls": ["HARBOR-PF-05"],
+      "name": "first-port-finding-is-not-public-authority",
+      "rule": "The cited DIM-01 deep-draft channel finding, gap CLI output, and portfolio summaries are research-lab evidence only. They do not authorize dredging design, terminal lease advice, NEPA or permitting evidence, funding direction, port-authority position, agency endorsement, carrier endorsement, or IMO endorsement. Public promotion requires a named release artifact, visible unassessed dimensions, cited corpus/source basis, declared scale, reproducible run, and full role review.",
+      "required_reviewers": [
+        "Port-System Planner",
+        "Maritime / Civil Engineer",
+        "Operations & Logistics Officer",
+        "Maritime Economist",
+        "Environmental & Port-Community Advocate",
+        "Port-Authority & Alliance Realist",
+        "Citation Auditor",
+        "Scope Keeper",
+        "Numeracy Checker"
+      ],
+      "required_evidence": [
+        "README.md",
+        "PRODUCT_PLAN.md",
+        "docs/findings/2026-06-deep-draft-channel-tail.md",
+        "docs/adoption/README.md",
+        "docs/vtrace/REVIEW.md",
+        ".roles/ROLE.md",
+        "tests/check-pitfall-policy.ps1"
+      ]
+    }
+  ]
+}

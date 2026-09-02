@@ -88,7 +88,7 @@ rewriting the historical foundation record.
 
 ## HARBOR-PF-05: First Port Finding Becomes Public Authority
 
-**Status:** OPEN
+**Status:** MITIGATED
 
 **Pattern:** The cited deep-draft channel finding, CLI gap output, or portfolio
 summary is treated as dredging design, terminal lease advice, NEPA/permitting
@@ -107,4 +107,5 @@ artifact.
 
 **Evidence:** `README.md`, `PRODUCT_PLAN.md`,
 `docs/findings/2026-06-deep-draft-channel-tail.md`,
-`docs/vtrace/REVIEW.md`, and `.roles/ROLE.md`.
+`docs/adoption/README.md`, `docs/vtrace/REVIEW.md`, `.roles/ROLE.md`,
+`docs/pitfall-boundaries.v1.json`, and `tests/check-pitfall-policy.ps1`.

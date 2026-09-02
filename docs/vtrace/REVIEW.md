@@ -69,6 +69,13 @@ No open critical or major findings.
 - Resolve scale nesting (DEF-005) and observed-vs-AIS dwell (DEF-002) before cross-scale or
   dwell-based public claims.
 
+## PITFALL Boundary
+
+No finding currently has public-authority status. The first DIM-01 deep-draft
+channel finding remains a narrow research result until a named release artifact
+preserves visible unassessed dimensions, cited corpus/source basis, declared
+scale, reproducible run evidence, and full role review.
+
 ## Validation Commands
 
 ```powershell
