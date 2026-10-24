@@ -49,6 +49,21 @@ boundary.
 
 ## Use HARBOR
 
+[Open the gateway-distribution workbench](https://giodl73-repo.github.io/HARBOR/)
+to replay the repository’s June 2026 eight-gateway illustration and change
+hypothetical scores. The unchanged native gap detector runs in a worker as
+WebAssembly: compare its minimum alert with concentrated-tail/systemic membership,
+mark a score missing, and see why clearing the assessed dimension does not clear
+twelve unassessed dimensions. This is a historical model replay with 2023 source
+context, not current channel clearance or a dredging recommendation. Inputs are
+neither uploaded nor stored; results, exact source records and WASM are downloadable.
+
+Build: `python tools/build-pages.py` with Rust 1.95.0 and the WASM target.
+Verify: locked workspace tests/strict Clippy, `npm ci`,
+`npx playwright install chromium`, then `npm test`. Native replay:
+`cargo run -p harbor-web --bin harbor-browser -- fixtures/browser-reset.json`.
+See [WP-WEB-001](docs/vtrace/WP_WEB_001.md) for scope and role review.
+
 HARBOR is public and open to use as a reference model, cited port-service
 finding, diagnostic pattern, review discipline, or local adaptation starting
 point.

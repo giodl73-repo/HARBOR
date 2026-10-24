@@ -1,0 +1,54 @@
+{
+  "scale": "national",
+  "rubric": "v0",
+  "entries": [
+    {
+      "id": "port:houston",
+      "name": "Houston container gateway",
+      "tier": "T2",
+      "score": null
+    },
+    {
+      "id": "port:long-beach",
+      "name": "Long Beach container gateway",
+      "tier": "T1",
+      "score": 10.0
+    },
+    {
+      "id": "port:los-angeles",
+      "name": "Los Angeles container gateway",
+      "tier": "T1",
+      "score": 10.0
+    },
+    {
+      "id": "port:nwsa",
+      "name": "Northwest Seaport Alliance container gateway",
+      "tier": "T2",
+      "score": 7.0
+    },
+    {
+      "id": "port:ny-nj",
+      "name": "New York / New Jersey container gateway",
+      "tier": "T1",
+      "score": 7.0
+    },
+    {
+      "id": "port:oakland",
+      "name": "Oakland container gateway",
+      "tier": "T2",
+      "score": 7.0
+    },
+    {
+      "id": "port:savannah",
+      "name": "Savannah container gateway",
+      "tier": "T2",
+      "score": 4.0
+    },
+    {
+      "id": "port:virginia",
+      "name": "Virginia (Norfolk) container gateway",
+      "tier": "T2",
+      "score": 7.0
+    }
+  ]
+}
