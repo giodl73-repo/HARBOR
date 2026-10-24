@@ -1,6 +1,6 @@
 # WP-WEB-001 — Gateway score-distribution browser replay
 
-Status: accepted for bounded implementation, 2026-10-23. Owner objective:
+Status: implemented; local exit verified, 2026-10-23. Owner objective:
 deliver all sixteen TAXLANE satellites, including software publication.
 
 ## Reader task
@@ -73,3 +73,28 @@ dwell/cost/labor/environment/operating unknowns, deferred to the named cited
 gateway runs. No critical/major actionable finding remains in this contract.
 Repeat review at implementation exit. Rollback: revert task and previous Pages
 artifact. Child commit/push precedes TRACKER pointer; no research hold advances.
+
+## Implementation exit
+
+All 42 native workspace tests, format and strict native Clippy pass. Seven
+actual-WASM browser cases pass, including exact native parity for reset/systemic/
+missing inputs, eight-entry minimum versus two-entry tail membership, edited
+scores and systemic pattern, cleared assessed dimension with twelve retained
+coverage gaps, missing-score/null downloads, all-missing scores with thirteen
+coverage gaps and no zero bars, invalid/oversized input, reset/recovery, worker
+loading/failure, keyboard/mobile/prefix and ten exact source-custody files.
+One local download attempt hit ENOSPC; only task-owned build intermediates were
+removed, and that case passed on retry. Final changed detector headings and
+membership checks also passed. Desktop/mobile screenshots inspected.
+
+The build validates reset score/tier identity against all eight committed corpus
+records and publishes those records, finding, registry and SHA-256 source custody.
+Artifact is approximately 424 KB with full dependency notices, below 5 MB.
+All seven Parliament and three editorial lenses repeat pass for historical
+model replay only. Resolved findings: distinguish scoped DIM-01 from the general
+pool; label source vintage and hypothetical edits; separate broad minimum
+membership from localized tail; preserve missing scores and all unassessed
+dimensions; use readable detector headings without hiding native outputs.
+Stakeholder defers above remain with the cited gateway runs. No critical/major
+actionable finding remains; no independent panel is claimed. Hosted checks gate
+master-only publication; TRACKER records final live artifact and routes.
