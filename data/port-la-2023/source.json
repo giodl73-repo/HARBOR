@@ -1,0 +1,255 @@
+{
+  "schema": "harbor.frozen-port-la-container-source.v1",
+  "year": 2023,
+  "gateway": "Port of Los Angeles",
+  "scale": "local gateway source context",
+  "unit": "centi-TEU (100 units = 1 TEU)",
+  "columns": [
+    "loaded_imports",
+    "empty_imports",
+    "total_imports",
+    "loaded_exports",
+    "empty_exports",
+    "total_exports",
+    "total_teu"
+  ],
+  "months": [
+    {
+      "month": 1,
+      "name": "January",
+      "centi_teu": [
+        37204000,
+        648070,
+        37852070,
+        10272325,
+        24477000,
+        34749325,
+        72601395
+      ],
+      "reported_prior_year_change": "-16.13%"
+    },
+    {
+      "month": 2,
+      "name": "February",
+      "centi_teu": [
+        24940745,
+        217520,
+        25158265,
+        8240400,
+        15385950,
+        23626350,
+        48784615
+      ],
+      "reported_prior_year_change": "-43.13%"
+    },
+    {
+      "month": 3,
+      "name": "March",
+      "centi_teu": [
+        31996195,
+        599180,
+        32595375,
+        9827625,
+        19900375,
+        29728000,
+        62323375
+      ],
+      "reported_prior_year_change": "-34.99%"
+    },
+    {
+      "month": 4,
+      "name": "April",
+      "centi_teu": [
+        34368850,
+        419525,
+        34788375,
+        8820175,
+        25202425,
+        34022600,
+        68810975
+      ],
+      "reported_prior_year_change": "-22.45%"
+    },
+    {
+      "month": 5,
+      "name": "May",
+      "centi_teu": [
+        40915015,
+        253580,
+        41168595,
+        10174100,
+        26571325,
+        36745425,
+        77914020
+      ],
+      "reported_prior_year_change": "-19.50%"
+    },
+    {
+      "month": 6,
+      "name": "June",
+      "centi_teu": [
+        43530665,
+        206955,
+        43737620,
+        10804950,
+        28760975,
+        39565925,
+        83303545
+      ],
+      "reported_prior_year_change": "-4.97%"
+    },
+    {
+      "month": 7,
+      "name": "July",
+      "centi_teu": [
+        36420830,
+        64195,
+        36485025,
+        11037225,
+        20906825,
+        31944050,
+        68429075
+      ],
+      "reported_prior_year_change": "-26.85%"
+    },
+    {
+      "month": 8,
+      "name": "August",
+      "centi_teu": [
+        43322425,
+        275895,
+        43598320,
+        12498750,
+        26704500,
+        39203250,
+        82801570
+      ],
+      "reported_prior_year_change": "2.82%"
+    },
+    {
+      "month": 9,
+      "name": "September",
+      "centi_teu": [
+        39260835,
+        144400,
+        39405235,
+        12063525,
+        23375250,
+        35438775,
+        74844010
+      ],
+      "reported_prior_year_change": "5.43%"
+    },
+    {
+      "month": 10,
+      "name": "October",
+      "centi_teu": [
+        37245480,
+        10900,
+        37256380,
+        12127650,
+        23193425,
+        35321075,
+        72577455
+      ],
+      "reported_prior_year_change": "6.98%"
+    },
+    {
+      "month": 11,
+      "name": "November",
+      "centi_teu": [
+        38461885,
+        14090,
+        38475975,
+        11175475,
+        26674725,
+        37850200,
+        76326175
+      ],
+      "reported_prior_year_change": "19.38%"
+    },
+    {
+      "month": 12,
+      "name": "December",
+      "centi_teu": [
+        36466100,
+        19100,
+        36485200,
+        12157475,
+        25609225,
+        37766700,
+        74251900
+      ],
+      "reported_prior_year_change": "1.87%"
+    }
+  ],
+  "reported_calendar_year_centi_teu": [
+    444133025,
+    2873410,
+    447006435,
+    129199675,
+    286762000,
+    415961675,
+    862968110
+  ],
+  "reported_calendar_year_change": "-12.93%",
+  "partial_fiscal_year": {
+    "label": "Total Fiscal Year 2023/24 (in progress)",
+    "included_in_calendar_sums": false,
+    "centi_teu": [
+      231177555,
+      528580,
+      231706135,
+      71060100,
+      146463950,
+      217524050,
+      449230185
+    ],
+    "reported_prior_year_change": "-0.11%"
+  },
+  "news": {
+    "publication_date": "2024-01-16",
+    "precision": "whole TEU as published",
+    "annual_centi_teu": 863449700,
+    "december_centi_teu": 74733500
+  },
+  "custody": {
+    "schema": "harbor.port-la-response-custody.v1",
+    "capture_date": "2026-10-26",
+    "table_publication_or_revision_date": null,
+    "news_publication_date": "2024-01-16",
+    "historical_corpus_original_source_recovered": false,
+    "files": [
+      {
+        "name": "table",
+        "url": "https://portoflosangeles.org/business/statistics/container-statistics/historical-teu-statistics-2023",
+        "status": 200,
+        "captured_at": "2026-10-26T20:07:50.754Z",
+        "bytes": 133507,
+        "sha256": "835226206a91cd8446ae0b0bf1f2aa55297b08b4e82c7b7f881256c69057ac0e",
+        "file": "table.html.txt",
+        "capture_method": "Chromium navigation response.body(); decoded HTTP response payload; unedited"
+      },
+      {
+        "name": "news",
+        "url": "https://portoflosangeles.org/references/2024-news-releases/news_011624_jan_cargo",
+        "status": 200,
+        "captured_at": "2026-10-26T20:05:47.073Z",
+        "bytes": 115338,
+        "sha256": "9d95b79d08922615b1e630169d062105d5c8b1e02f0cd776803766f99731406e",
+        "file": "news.html.txt",
+        "capture_method": "Chromium navigation response.body(); decoded HTTP response payload; unedited"
+      },
+      {
+        "name": "disclaimer",
+        "url": "https://portoflosangeles.org/disclaimer",
+        "status": 200,
+        "captured_at": "2026-10-26T20:05:48.777Z",
+        "bytes": 113182,
+        "sha256": "943548f4624e4caf40947dbe96b0e306e1005f7261d100da1e3c1febbd256cba",
+        "file": "disclaimer.html.txt",
+        "capture_method": "Chromium navigation response.body(); decoded HTTP response payload; unedited"
+      }
+    ]
+  }
+}

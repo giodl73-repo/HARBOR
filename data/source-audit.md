@@ -43,3 +43,13 @@ and citation roles. Recheck dates, units and scales independently. Add dwell,
 hinterland and other observations on their own evidence basis; twelve unassessed
 dimensions remain coverage gaps. No fiscal admission, savings, engineering,
 dredging or navigation authority is granted by this audit.
+
+## Separate captured publisher-source comparison
+
+WP-WEB-003 adds October 26, 2026 captures of the Port of Los Angeles's 2023 table
+and January 16, 2024 news release. Their calendar totals differ at full precision
+but both round to the retained 8.6-million context. This is new, reproducible
+source custody for those two publisher surfaces; it does not identify which
+source/version produced the historical corpus or resolve its sixteen original-
+citation holds. Its source fixture and response hashes live in `data/port-la-2023/`.
+No channel, score, model quantity or historical evidence label is changed.

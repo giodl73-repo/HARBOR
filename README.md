@@ -58,6 +58,19 @@ twelve unassessed dimensions. This is a historical model replay with 2023 source
 context, not current channel clearance or a dredging recommendation. Inputs are
 neither uploaded nor stored; results, exact source records and WASM are downloadable.
 
+[Inspect frozen Los Angeles container sources](https://giodl73-repo.github.io/HARBOR/#container-source)
+to compare twelve months of 2023 loaded and total TEU, reconcile all seven
+quantity columns and see the difference between the publisher's table and its
+January 16, 2024 news release. Both totals round to the old 8.6-million context;
+that does not establish an exact historical value. The separate partial fiscal
+row is excluded from calendar sums. Capture date, unknown table-update date and
+unknown discrepancy cause remain visible. This local gateway source task does
+not alter the national hypothetical model or recover its original citations.
+Original publisher responses, fixture, custody and results are downloadable.
+Native source query: `cargo run --locked -p harbor-web --bin harbor-browser -- cargo fixtures/cargo-all.json`.
+Offline source verification: `python tools/verify-port-la.py`.
+See [WP-WEB-003](docs/vtrace/WP_WEB_003.md) for the bounded contract.
+
 Build: `python tools/build-pages.py` with Rust 1.95.0 and the WASM target.
 Verify: locked workspace tests/strict Clippy, `npm ci`,
 `npx playwright install chromium`, then `npm test`. Native replay:

@@ -1,0 +1,39 @@
+{
+  "schema": "harbor.port-la-response-custody.v1",
+  "capture_date": "2026-10-26",
+  "table_publication_or_revision_date": null,
+  "news_publication_date": "2024-01-16",
+  "historical_corpus_original_source_recovered": false,
+  "files": [
+    {
+      "name": "table",
+      "url": "https://portoflosangeles.org/business/statistics/container-statistics/historical-teu-statistics-2023",
+      "status": 200,
+      "captured_at": "2026-10-26T20:07:50.754Z",
+      "bytes": 133507,
+      "sha256": "835226206a91cd8446ae0b0bf1f2aa55297b08b4e82c7b7f881256c69057ac0e",
+      "file": "table.html.txt",
+      "capture_method": "Chromium navigation response.body(); decoded HTTP response payload; unedited"
+    },
+    {
+      "name": "news",
+      "url": "https://portoflosangeles.org/references/2024-news-releases/news_011624_jan_cargo",
+      "status": 200,
+      "captured_at": "2026-10-26T20:05:47.073Z",
+      "bytes": 115338,
+      "sha256": "9d95b79d08922615b1e630169d062105d5c8b1e02f0cd776803766f99731406e",
+      "file": "news.html.txt",
+      "capture_method": "Chromium navigation response.body(); decoded HTTP response payload; unedited"
+    },
+    {
+      "name": "disclaimer",
+      "url": "https://portoflosangeles.org/disclaimer",
+      "status": 200,
+      "captured_at": "2026-10-26T20:05:48.777Z",
+      "bytes": 113182,
+      "sha256": "943548f4624e4caf40947dbe96b0e306e1005f7261d100da1e3c1febbd256cba",
+      "file": "disclaimer.html.txt",
+      "capture_method": "Chromium navigation response.body(); decoded HTTP response payload; unedited"
+    }
+  ]
+}

@@ -13,9 +13,16 @@ pub extern "C" fn input_buffer(length: usize) -> *mut u8 {
 }
 #[no_mangle]
 pub extern "C" fn evaluate() -> *const u8 {
+    invoke(response)
+}
+#[no_mangle]
+pub extern "C" fn explore_cargo() -> *const u8 {
+    invoke(super::cargo::response)
+}
+fn invoke(evaluator: fn(&str) -> String) -> *const u8 {
     let input = INPUT.lock().unwrap();
     let result = match std::str::from_utf8(&input) {
-        Ok(text) => response(text),
+        Ok(text) => evaluator(text),
         Err(_) => "{\"ok\":false,\"error\":\"Input must be UTF-8\"}".into(),
     };
     let mut output = OUTPUT.lock().unwrap();

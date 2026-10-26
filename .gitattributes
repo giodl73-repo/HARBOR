@@ -1,3 +1,6 @@
 
 # Preserve the exact historically published finding, with Git blob bytes.
 data/history/2026-06-deep-draft-channel-tail-original.md -text
+
+# Exact publisher response payloads; served as text, never as active HTML.
+data/port-la-2023/*.html.txt -text -diff
