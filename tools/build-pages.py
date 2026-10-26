@@ -44,6 +44,7 @@ def audit_table(audit):
 def output(*args):return subprocess.check_output(args,cwd=ROOT,text=True,encoding='utf-8')
 
 def main():
+    subprocess.run(['python',str(ROOT/'tools/verify-port-la.py')],cwd=ROOT,check=True)
     audit=source_audit()
     reset=json.loads((ROOT/'fixtures/browser-reset.json').read_text())
     source_rows={}
@@ -58,10 +59,17 @@ def main():
     for mode in ['reset','systemic','missing']:
         path=f'fixtures/browser-{mode}.json';refs.append({'input':(ROOT/path).read_text(),'canonical':output('cargo','run','--locked','--quiet','-p','harbor-web','--bin','harbor-browser','--',path).strip()})
     (cache/'native-results.json').write_text(json.dumps(refs),encoding='utf-8')
+    cargo_refs=[]
+    for mode in ['all','loaded','december','empty']:
+        path=f'fixtures/cargo-{mode}.json';cargo_refs.append({'input':(ROOT/path).read_text(),'canonical':output('cargo','run','--locked','--quiet','-p','harbor-web','--bin','harbor-browser','--','cargo',path).strip()})
+    (cache/'cargo-native-results.json').write_text(json.dumps(cargo_refs),encoding='utf-8')
     subprocess.run(['cargo','build','--locked','--release','--target','wasm32-unknown-unknown','-p','harbor-web','--lib'],cwd=ROOT,check=True)
     metadata=json.loads(output('cargo','metadata','--no-deps','--format-version','1'))
     dest=ROOT/'dist/HARBOR';(dest/'pkg').mkdir(parents=True,exist_ok=True)
     shutil.copy2(Path(metadata['target_directory'])/'wasm32-unknown-unknown/release/harbor_web.wasm',dest/'pkg/harbor_web.wasm')
+    (dest/'cargo').mkdir(exist_ok=True)
+    for name in ['table.html.txt','news.html.txt','disclaimer.html.txt','custody.json','source.json','NOTICE.txt']:
+        shutil.copy2(ROOT/'data/port-la-2023'/name,dest/'cargo'/name)
     (dest/'source-audit.json').write_bytes((json.dumps(audit,indent=2)+'\n').encode('utf-8'))
     for file in (ROOT/'web').iterdir():
         if file.is_file():shutil.copy2(file,dest/file.name)
@@ -78,7 +86,7 @@ def main():
     for file,target in sources:
         shutil.copy2(file,dest/target);custody.append({'source':file.relative_to(ROOT).as_posix(),'published':target,'sha256':hashlib.sha256(file.read_bytes()).hexdigest()})
     (dest/'source-custody.json').write_text(json.dumps(custody,indent=2),encoding='utf-8')
-    provenance={'commit':output('git','rev-parse','HEAD').strip(),'dirty':bool(output('git','status','--porcelain').strip()),'rust':output('rustc','--version').strip(),'source':'https://github.com/giodl73-repo/HARBOR','scope':'hypothetical replay of June 2026 repository illustration; 2023 source context'}
+    provenance={'commit':output('git','rev-parse','HEAD').strip(),'dirty':bool(output('git','status','--porcelain').strip()),'rust':output('rustc','--version').strip(),'source':'https://github.com/giodl73-repo/HARBOR','scope':'frozen local Port LA 2023 source reconciliation; separate hypothetical national gateway model'}
     (dest/'provenance.json').write_text(json.dumps(provenance,indent=2),encoding='utf-8');(dest/'.nojekyll').touch()
     size=sum(file.stat().st_size for file in dest.rglob('*') if file.is_file())
     if size>=5_000_000:raise ValueError('Artifact exceeds 5 MB')

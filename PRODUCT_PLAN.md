@@ -22,6 +22,14 @@ source-needed after the 2026-10-26 custody audit; no real channel deficit or
 vessel-clearance conclusion is established. Additional dwell, hinterland, resilience, and competition runs remain
 next steps.
 
+The separate frozen Los Angeles source task now reconciles twelve months and
+seven container-quantity columns against the calendar total, preserving a
+4,815.90-TEU difference from the publisher's January 2024 news release. Both
+publisher totals round to 8.6 million, so the old rounded context cannot identify
+an exact source vintage. Source acquisition is now reproducible for these two
+captured surfaces; original national-model citations and operational evidence
+remain held. See WP-WEB-003.
+
 ## Next public work
 
 1. Publish reproducible source manifests for cited gateway runs.

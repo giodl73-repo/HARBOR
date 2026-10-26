@@ -1,4 +1,6 @@
 //! Historical repository-model replay; edits are hypothetical, never new findings.
+pub mod cargo;
+
 use harbor_corpus::{CorpusEntry, Scale};
 use harbor_gap::{find_gaps, null_result, GapSource};
 use harbor_score::{Dimension, Rubric, Score};

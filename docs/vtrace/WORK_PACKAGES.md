@@ -205,3 +205,10 @@ Retain the detector replay and values; correct sixteen quantity evidence labels,
 withdraw unsupported navigation conclusions, preserve the original finding and
 publish a source-custody audit available without WASM. Live publication is
 recorded in the TRACKER release snapshot after hosted checks and deployment.
+
+## WP-WEB-003 — Frozen container-source reconciliation
+
+Accepted 2026-10-26; see [WP_WEB_003.md](WP_WEB_003.md). Shared native/WASM
+queries reconcile one local gateway's frozen 2023 monthly/annual source data,
+separate loaded/total units and preserve a publisher-source discrepancy. The
+national hypothetical model and original-citation holds remain unchanged.

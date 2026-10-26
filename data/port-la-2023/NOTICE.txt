@@ -1,0 +1,26 @@
+Publisher: Port of Los Angeles, Harbor Department of the City of Los Angeles.
+
+The original table, news release and disclaimer response payloads are retained
+unedited for reproducible, attributed source comparison. They are served as plain
+text downloads, never as active HTML; no external publisher assets are bundled.
+The source.json fixture is an exact numeric/text extraction of the specified
+table and news quantities. Source URLs, capture times, byte sizes and hashes are
+in custody.json; exact row/column locators and extraction are in verify-port-la.py.
+
+Third-party publisher material remains under its own terms and is excluded from
+HARBOR's MIT software and CC BY-NC original-content grants. This package asserts
+no blanket license over publisher HTML, trademarks or other third-party material.
+Original copyright notices remain in the captures. The publisher's disclaimer is
+https://portoflosangeles.org/disclaimer; its retained response is disclaimer.html.txt.
+The publisher supplies the site/materials as is, without warranties. No Port,
+City, MARAD, carrier or agency endorsement is claimed. Please retain attribution and original links with this source comparison;
+consult publisher terms for other reuse.
+
+Table window: calendar 2023, with twelve monthly rows and a calendar total.
+The separate fiscal-year-2023/24 in-progress row is retained but excluded from
+calendar arithmetic. The table's publication/update date is not established.
+News publication date: January 16, 2024; its figures have whole-TEU precision.
+All three responses were captured October 26, 2026; these are not recoveries of
+the historical corpus's original source bytes. Both annual totals round to 8.6
+million TEU but differ at full precision. Cause/revision chronology are unknown.
+TEU throughput is not container/vessel count, capacity, dwell or draft clearance.
