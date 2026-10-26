@@ -15,5 +15,9 @@ as cited context only and is **not** scored, to avoid conflating port size with
 deficiency.
 
 score: DIM-01 | 10
-quantity: 53 | feet-channel-depth-mlw | implemented | usace-channel-depth-2023 | average
-quantity: 8.6 | million-teu-2023 | implemented | port-teu-2023 | average
+quantity: 53 | feet-channel-depth-mlw | source-needed | usace-channel-depth-2023 | average
+quantity: 8.6 | million-teu-2023 | source-needed | port-teu-2023 | average
+Source-custody audit (2026-10-26): these retained quantities lack original
+source bytes and record-level locators. Values are unverified historical context;
+DIM-01 remains an illustrative score, not an observed navigation finding.
+See `data/source-audit.md`.

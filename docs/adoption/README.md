@@ -17,7 +17,7 @@ sources:
 ## Purpose
 
 HARBOR is public and open to use. Use it as a reference model for evidence-gated
-port and maritime-gateway analysis, as a cited finding, or as a pattern for a
+port and maritime-gateway analysis, as a historical detector illustration, or as a pattern for a
 bounded gateway, terminal, channel-access, hinterland, resilience, or intermodal
 adaptation.
 
@@ -30,7 +30,7 @@ port-authority endorsement, carrier endorsement, or IMO endorsement.
 | If You Are | Start With | What You Can Do |
 |---|---|---|
 | Public reader | [`README.md`](../../README.md) | Understand the port service-chain model. |
-| Researcher | [`docs/findings/2026-06-deep-draft-channel-tail.md`](../findings/2026-06-deep-draft-channel-tail.md) | Inspect the cited channel-access finding. |
+| Researcher | [`docs/findings/2026-06-deep-draft-channel-tail.md`](../findings/2026-06-deep-draft-channel-tail.md) | Inspect model behavior and unresolved primary-source custody. |
 | Port, freight, or planner reviewer | [`local-adaptation-worksheet.md`](local-adaptation-worksheet.md) | Scope a gateway or terminal-service question without overclaiming. |
 | Builder or contributor | [`docs/vtrace/`](../vtrace) | Work from requirements, traceability, and evidence labels. |
 

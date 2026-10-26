@@ -197,3 +197,11 @@ Status: done.
 
 Fixed-point note: no actionable finding required a change. Work packages are runnable and
 orphan-free. WP-001 is `ready`; the rest unblock in sequence.
+
+## WP-WEB-002 — Historical source custody correction
+
+Accepted and implemented 2026-10-26; see [WP_WEB_002.md](WP_WEB_002.md).
+Retain the detector replay and values; correct sixteen quantity evidence labels,
+withdraw unsupported navigation conclusions, preserve the original finding and
+publish a source-custody audit available without WASM. Live publication is
+recorded in the TRACKER release snapshot after hosted checks and deployment.
