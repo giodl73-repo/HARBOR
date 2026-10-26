@@ -64,8 +64,8 @@ Verify: locked workspace tests/strict Clippy, `npm ci`,
 `cargo run -p harbor-web --bin harbor-browser -- fixtures/browser-reset.json`.
 See [WP-WEB-001](docs/vtrace/WP_WEB_001.md) for scope and role review.
 
-HARBOR is public and open to use as a reference model, cited port-service
-finding, diagnostic pattern, review discipline, or local adaptation starting
+HARBOR is public and open to use as a reference model, historical detector
+illustration, diagnostic pattern, review discipline, or local adaptation starting
 point.
 
 ### Reuse boundary
@@ -109,11 +109,15 @@ visible asset.**
 
 ## Evidence
 
-The first cited
-[deep-draft channel analysis](docs/findings/2026-06-deep-draft-channel-tail.md)
-covers eight US gateways. Its concentrated distribution names Houston and
-Savannah where a minimum-only detector would overgeneralize; the systemic
-classifier keeps that distinction explicit.
+The corrected historical
+[gateway-score illustration](docs/findings/2026-06-deep-draft-channel-tail.md)
+covers eight US gateways. Its retained scores name Houston and Savannah in the
+model tail where a minimum-only detector names all eight. The sixteen physical
+quantities lack original-source custody and are labelled `source-needed`; this
+is detector behavior, not a demonstrated navigation deficit.
+See the [source-custody audit](data/source-audit.md) and inspect it directly in
+the [workbench](https://giodl73-repo.github.io/HARBOR/#source-audit), even if WASM
+cannot load. The superseded original finding is preserved byte for byte.
 
 ## Quick start
 

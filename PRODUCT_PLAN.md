@@ -16,9 +16,10 @@ only where evidence supports them.
 
 ## Current evidence
 
-The first cited channel-adequacy analysis covers eight US gateways and
-demonstrates why concentrated deficits must not be reported as a system-wide
-failure. Additional dwell, hinterland, resilience, and competition runs remain
+The historical eight-gateway score illustration demonstrates detector behavior
+on a concentrated model distribution. Its sixteen physical quantities are
+source-needed after the 2026-10-26 custody audit; no real channel deficit or
+vessel-clearance conclusion is established. Additional dwell, hinterland, resilience, and competition runs remain
 next steps.
 
 ## Next public work

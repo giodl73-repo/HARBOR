@@ -10,5 +10,13 @@ be expanded as the corpus grows; a source id is stable once cited.
 | `SRC-UNCTAD-MARITIME` | source-needed | UNCTAD Review of Maritime Transport / port connectivity data | International maritime connectivity and trade context. |
 | `SRC-AIS-PROXY` | proxy | AIS-derived vessel movement datasets | Proxy-only lane, dwell, and call-pattern evidence until observed data is available. |
 | `SRC-CENSUS-TRADE` | source-needed | U.S. Census international trade data | Market and corridor trade flows for national/regional analysis. |
-| `usace-channel-depth-2023` | implemented | U.S. Army Corps of Engineers harbor/channel project depths and port-authority published channel depths (MLW), 2022–2024 | Deep-draft channel depths used for DIM-01 adequacy. LA/LB San Pedro main channel ~-53 ft; NY/NJ Harbor Deepening -50 ft (2016); Norfolk/Virginia -50 ft (deepening to -55 ft underway); Oakland -50 ft; NWSA (Seattle ~-50 ft / Tacoma Blair -51 ft); Savannah Harbor Expansion (SHEP) -47 ft (USACE, 2022); Houston Ship Channel ~-45 ft (USACE Project 11). |
-| `port-teu-2023` | implemented | Port-authority calendar-year 2023 container volume reports and BTS port container rankings | Loaded+empty TEU rounded to one decimal (million TEU). Context only; not scored. |
+| `usace-channel-depth-2023` | source-needed | U.S. Army Corps of Engineers harbor/channel project depths and port-authority published channel depths (MLW), 2022–2024 | Deep-draft channel depths used for DIM-01 adequacy. LA/LB San Pedro main channel ~-53 ft; NY/NJ Harbor Deepening -50 ft (2016); Norfolk/Virginia -50 ft (deepening to -55 ft underway); Oakland -50 ft; NWSA (Seattle ~-50 ft / Tacoma Blair -51 ft); Savannah Harbor Expansion (SHEP) -47 ft (USACE, 2022); Houston Ship Channel ~-45 ft (USACE Project 11). |
+| `port-teu-2023` | source-needed | Port-authority calendar-year 2023 container volume reports and BTS port container rankings | Loaded+empty TEU rounded to one decimal (million TEU). Context only; not scored. |
+
+## Source-custody correction — 2026-10-26
+
+The two historical IDs above are broad references, not verified record-level
+citations. All sixteen quantities across the eight gateway records are now
+`source-needed`; retained values and illustrative scores are unchanged. No
+original measurement is verified by a hash of a repository corpus file.
+See [source-audit.md](source-audit.md) for the required primary-source gate.

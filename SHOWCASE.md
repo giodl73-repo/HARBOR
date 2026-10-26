@@ -37,7 +37,7 @@ delay on the berth?*
 | Step | What to look at | Why |
 |---|---|---|
 | 1 | README “Why this matters” + boundary | Claim fence |
-| 2 | [2026-06 deep-draft channel analysis](docs/findings/2026-06-deep-draft-channel-tail.md) | Eight US gateways; concentrated tail (e.g. Houston, Savannah) vs min-only overgeneralization |
+| 2 | [2026-06 deep-draft channel analysis](docs/findings/2026-06-deep-draft-channel-tail.md) | Eight retained model scores; physical quantities source-needed; no navigation conclusion |
 | 3 | [Adoption guide](docs/adoption/README.md) | Local gateway adaptation |
 | 4 | Reproduce | `cargo run -p harbor-cli -- gap --input corpus --scale national` |
 
@@ -65,10 +65,10 @@ cargo test --workspace
 
 | Field | Value |
 |---|---|
-| Claim text | HARBOR can be shown as Ports 2.0 gateway-chain scoring with a cited deep-draft channel finding and scale-aware CLI. |
+| Claim text | HARBOR can be shown as Ports 2.0 gateway-chain scoring with a historical gateway-score detector illustration and scale-aware CLI. |
 | Audience | Maritime/freight planners; CLI implementers. |
 | Evidence | README; 2026-06 finding; adoption docs; CLI path. |
-| Validation | Finding-scoped gateway set; not engineering or environmental clearance. |
+| Validation | Illustrative detector behavior; sixteen quantities need original-source custody. |
 | Limitations | First finding is channel-tail focused; full multi-DIM national port program is broader than one showcase run. |
 | Non-claims | Dredging design, NEPA, terminal lease advice, official endorsements. |
 

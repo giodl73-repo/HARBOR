@@ -1,4 +1,5 @@
 import {test,expect} from '@playwright/test';
+import {createHash} from 'node:crypto';
 import {readFileSync} from 'node:fs';
 async function ready(page){await page.goto('/HARBOR/');await expect(page.getByRole('status')).toContainText('Comparison ready');}
 
@@ -37,5 +38,36 @@ test('loading and worker failure remain explicit',async({page})=>{
 test('keyboard mobile and exact source-custody artifacts work under HARBOR prefix',async({page})=>{
  const errors=[];page.on('pageerror',error=>errors.push(error.message));await page.setViewportSize({width:390,height:844});await ready(page);await page.locator('#compare').focus();await page.keyboard.press('Tab');await expect(page.locator('#reset')).toBeFocused();await page.keyboard.press('Enter');await expect(page.getByRole('status')).toContainText('Comparison ready');expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
  for(const path of ['pkg/harbor_web.wasm','example.json','systemic.json','missing.json','LICENSE','THIRD-PARTY-LICENSES.txt','provenance.json','source-custody.json'])expect((await page.request.get('/HARBOR/'+path)).ok()).toBe(true);
- const custody=await (await page.request.get('/HARBOR/source-custody.json')).json();expect(custody).toHaveLength(10);for(const file of custody)expect((await page.request.get('/HARBOR/'+file.published)).ok()).toBe(true);expect(errors).toEqual([]);
+ const custody=await (await page.request.get('/HARBOR/source-custody.json')).json();expect(custody).toHaveLength(12);for(const file of custody)expect((await page.request.get('/HARBOR/'+file.published)).ok()).toBe(true);expect(errors).toEqual([]);
+});
+
+
+test('source audit distinguishes derivative custody from verified measurements',async({page})=>{
+ await ready(page);await expect(page.locator('#source-audit')).toContainText('Sixteen quantities needing primary sources');
+ await page.getByText('Inspect all eight retained gateway records',{exact:true}).click();await expect(page.locator('#audit-rows tr')).toHaveCount(8);
+ const audit=await (await page.request.get('/HARBOR/source-audit.json')).json();
+ expect(audit.quantity_count).toBe(16);expect(audit.verified_primary_quantities).toBe(0);expect(audit.unverified_quantities).toBe(16);
+ for(const row of audit.gateways){
+  const bytes=await (await page.request.get('/HARBOR/'+row.published_corpus)).body();
+  expect(createHash('sha256').update(bytes).digest('hex')).toBe(row.corpus_sha256);
+  expect(bytes.toString().match(/quantity:.*source-needed/g)).toHaveLength(2);
+  for(const q of row.quantities){expect(q.evidence_label).toBe('source-needed');expect(q.primary_source_verified).toBe(false);expect(q.primary_source_locator).toBeNull();expect(q.primary_source_sha256).toBeNull();}
+ }
+ const original=await (await page.request.get('/HARBOR/'+audit.original_finding.published)).body();
+ expect(createHash('sha256').update(original).digest('hex')).toBe('93f59553afd315aba5ca610794311b95444a015240212aebfc89cd86e4103f72');
+ expect(original.toString()).toContain('The actual deficit is real and narrow');
+ const corrected=await (await page.request.get('/HARBOR/evidence/finding.md')).text();
+ expect(corrected).toContain('navigation and physical-deficit claims');expect(corrected).toContain('are withdrawn');expect(corrected).not.toContain('The actual deficit is real and narrow');
+ const [download]=await Promise.all([page.waitForEvent('download'),page.getByRole('link',{name:'Download source audit JSON'}).click()]);
+ expect(JSON.parse(readFileSync(await download.path(),'utf8'))).toEqual(audit);
+});
+
+test('source audit remains usable without WASM with keyboard and mobile',async({page})=>{
+ await page.route('**/*.wasm',route=>route.abort());await page.setViewportSize({width:390,height:844});await page.goto('/HARBOR/#source-audit');
+ await expect(page.getByRole('status')).toContainText('Unable to load Rust WebAssembly');
+ const summary=page.getByText('Inspect all eight retained gateway records',{exact:true});await summary.focus();await page.keyboard.press('Enter');
+ await expect(page.locator('#audit-rows tr')).toHaveCount(8);await expect(page.locator('#audit-rows tr').first()).toBeVisible();
+ const table=page.getByRole('region',{name:'Historical source custody'});await table.focus();await page.keyboard.press('ArrowRight');await expect(table).toBeFocused();
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+ await expect(page.getByRole('link',{name:'Source audit and next evidence gate'})).toBeVisible();
 });
